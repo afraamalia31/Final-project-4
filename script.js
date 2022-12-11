@@ -18,16 +18,23 @@ let weather = {
     },
     displayWeather: function (data) {
       const { name } = data;
+      const { country } = data.sys;
       const { icon, description } = data.weather[0];
       const { temp, humidity } = data.main;
       const { speed } = data.wind;
-      document.querySelector(".city").innerText = "City: " + name;
+      const { all } = data.clouds;
+      const { lat, lon} = data.coord;
+      document.querySelector(".city").innerText = "City: " + name + "," + country;
       document.querySelector(".icon").src = 
         "https://openweathermap.org/img/wn/" + icon + ".png";
       document.querySelector(".description").innerText =  "Conditions: " + description;
       document.querySelector(".temp").innerText = "Temperature: " + temp + "°C";
       document.querySelector(".wind").innerText =
         "Wind speed: " + speed + " km/h";
+        document.querySelector(".humidity").innerText =
+      "Humidity: " + humidity + "%";
+      document.querySelector(".clouds").innerText = "Clouds: " + all + "%";
+      document.querySelector(".geo-coordinates").innerText = "Geo Coordinates: " + lat + ", " + lon;
       document.querySelector(".weather").classList.remove("loading");
       document.body.style.backgroundImage =
         "url('https://source.unsplash.com/1600x900/?" + name + "')";
@@ -36,10 +43,6 @@ let weather = {
       this.fetchWeather(document.querySelector(".search-bar").value);
     },
   };
-  
-  document.querySelector(".search button").addEventListener("click", function () {
-    weather.search();
-  });
   
   document
     .querySelector(".search-bar")
@@ -51,3 +54,6 @@ let weather = {
   
   weather.fetchWeather("Bali");
   
+  function searchBar() {
+    weather.search();
+  }
