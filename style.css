@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #222;
@@ -17,7 +17,7 @@ body {
     border-radius: 30px;
     width: 100%;
     max-width: 420px;
-    margin: 1em;
+    margin: 10%;
   }
   
   .search {
@@ -28,7 +28,7 @@ body {
   
   button {
     margin: 0.5em;
-    border-radius: 15%;
+    border-radius: 24px;
     border: none;
     height: 44px;
     width: 60px;
@@ -83,4 +83,13 @@ body {
     position: absolute;
     top: 0;
     left: 20px;
+  }
+
+  #map { 
+    height: 40vh;
+    width: 50%;
+  }
+  
+  .leaflet-popup-content-wrapper {
+    width: 100%;
   }
