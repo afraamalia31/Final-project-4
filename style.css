@@ -84,3 +84,12 @@ body {
     top: 0;
     left: 20px;
   }
+
+  #map { 
+    height: 40vh;
+    width: 50%;
+  }
+  
+  .leaflet-popup-content-wrapper {
+    width: 100%;
+  }
