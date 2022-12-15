@@ -52,11 +52,7 @@ if (navigator.geolocation) {
   alert("Geolocation is not supported by this browser.");
 }
 
-function showPosition(position) {
-  let lat=position.coords.latitude;
-  let long=position.coords.longitude;
-  generateMap(lat,long);
-  console.log(lat,long,weather.apiKey);
+function Api(lat, long) {
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?lat=" +
       lat +
@@ -71,6 +67,15 @@ function showPosition(position) {
       return response.json();
     })
     .then((data) => weather.displayWeather(data));
+  
+}
+
+function showPosition(position) {
+  let lat=position.coords.latitude;
+  let long=position.coords.longitude;
+  generateMap(lat,long);
+  console.log(lat,long,weather.apiKey);
+  Api(lat, long);
 }
 
 
@@ -129,19 +134,6 @@ function showPosition(position) {
     lat=e.target._latlng.lat;
     long=e.target._latlng.lng;
     generateMap(lat,long);
-    fetch(
-      "https://api.openweathermap.org/data/2.5/weather?lat=" +
-        lat +
-        "&lon="+long+"&units=metric&appid=" +
-        weather.apiKey
-    )
-      .then((response) => {
-        if (!response.ok) {
-          alert("No weather found.");
-          throw new Error("No weather found.");
-        }
-        return response.json();
-      })
-      .then((data) => weather.displayWeather(data));
+    Api(lat, long);
   })
 }
