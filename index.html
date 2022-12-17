@@ -25,19 +25,22 @@
         </svg>
       </button>
     </div>
-    <div class="weather loading">
-      <h2 class="city">City: Bali</h2>
-      <div class="flex">
-        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
-        <div class="description">Conditions: Cloudy</div>
+    <div>
+      <div class="weather loading">
+        <h2 class="city">City: Bali</h2>
+        <div class="flex">
+          <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+          <div class="description">Conditions: Cloudy</div>
+        </div>
+        <h1 class="temp">Temperature: 31°C</h1>  
+        <div class="wind">Wind speed: 6.2 km/h</div>
+        <div class="humidity">Humidity: 60%</div>
+        <div class="clouds">Clouds : 67%</div>
+        <div class="geo-coordinates">Geo Coordinates: [-8.5, 115]</div>
       </div>
-      <h1 class="temp">Temperature: 31°C</h1>  
-      <div class="wind">Wind speed: 6.2 km/h</div>
-      <div class="humidity">Humidity: 60%</div>
-      <div class="clouds">Clouds : 67%</div>
-      <div class="geo-coordinates">Geo Coordinates: [-8.5, 115]</div>
+      <div id="map"></div> 
     </div>
-    <div id="map"></div> 
+  
   </div>
 
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
