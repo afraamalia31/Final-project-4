@@ -80,7 +80,7 @@ body {
     visibility: visible;
     content: "Loading...";
     color: white;
-    position: absolute;
+    position: auto;
     top: 0;
     left: 20px;
   }
