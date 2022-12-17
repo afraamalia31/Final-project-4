@@ -93,3 +93,9 @@ body {
   .leaflet-popup-content-wrapper {
     width: 100%;
   }
+
+  .city {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
