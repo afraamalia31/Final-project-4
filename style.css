@@ -100,3 +100,12 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 575px) {
+    .cuaca, h1.temp {
+      font-size: small;
+    }
+    .city {
+      font-size: medium;
+    }
+  }
